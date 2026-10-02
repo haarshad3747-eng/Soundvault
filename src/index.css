@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --y2k-cyan: #00f0ff;
+    --y2k-orange: #ff7700;
+    --y2k-purple: #c084fc;
+    --y2k-chrome: linear-gradient(135deg, #ffffff 0%, #cbd5e1 30%, #94a3b8 50%, #e2e8f0 70%, #64748b 100%);
+    --y2k-holo: linear-gradient(135deg, #00f0ff 0%, #a855f7 35%, #ec4899 65%, #ff7700 100%);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #08090d;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Y2K Glassmorphism & Chrome Effects */
+.y2k-glass {
+  background: rgba(18, 22, 34, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.y2k-glass-subtle {
+  background: rgba(15, 18, 28, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.y2k-card-bubble {
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, rgba(26, 31, 46, 0.7) 0%, rgba(13, 16, 26, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.y2k-card-bubble:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 14px 40px -10px rgba(0, 240, 255, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.y2k-chrome-text {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 45%, #94a3b8 55%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 240, 255, 0.3));
+}
+
+.y2k-holo-text {
+  background: linear-gradient(135deg, #00f0ff 0%, #c084fc 40%, #ff7700 85%, #00f0ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holoShift 6s ease infinite;
+}
+
+@keyframes holoShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.y2k-btn-primary {
+  background: linear-gradient(135deg, #00f0ff 0%, #0284c7 60%, #0369a1 100%);
+  color: #050b14;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.y2k-btn-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  transform: scale(1.02);
+}
+
+.y2k-btn-accent {
+  background: linear-gradient(135deg, #ff8c00 0%, #ea580c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 0 20px rgba(255, 119, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.y2k-btn-accent:hover {
+  box-shadow: 0 0 30px rgba(255, 119, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  transform: scale(1.02);
+}
+
+.y2k-btn-glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.y2k-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Sparkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}

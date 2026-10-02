@@ -1,0 +1,10 @@
+{
+  "name": "SoundVault",
+  "description": "A free royalty-free catalog of samples, loops, one-shots, MIDI and presets for music producers with live waveform preview and audio search.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
